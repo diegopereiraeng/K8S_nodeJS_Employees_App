@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<testsuites>
+<testsuite package="org.eslint" time="0" tests="1" errors="0" name="/Users/koaladiego/Documents/Development/K8S_nodeJS_Employees_App/EmployeeKoalaDB/app.js">
+<testcase time="0" name="/Users/koaladiego/Documents/Development/K8S_nodeJS_Employees_App/EmployeeKoalaDB/app.js" classname="/Users/koaladiego/Documents/Development/K8S_nodeJS_Employees_App/EmployeeKoalaDB/app" />
+</testsuite>
+<testsuite package="org.eslint" time="0" tests="1" errors="0" name="/Users/koaladiego/Documents/Development/K8S_nodeJS_Employees_App/EmployeeKoalaDB/employeeprovider.js">
+<testcase time="0" name="/Users/koaladiego/Documents/Development/K8S_nodeJS_Employees_App/EmployeeKoalaDB/employeeprovider.js" classname="/Users/koaladiego/Documents/Development/K8S_nodeJS_Employees_App/EmployeeKoalaDB/employeeprovider" />
+</testsuite>
+<testsuite package="org.eslint" time="0" tests="1" errors="0" name="/Users/koaladiego/Documents/Development/K8S_nodeJS_Employees_App/EmployeeKoalaDB/old_app.js">
+<testcase time="0" name="/Users/koaladiego/Documents/Development/K8S_nodeJS_Employees_App/EmployeeKoalaDB/old_app.js" classname="/Users/koaladiego/Documents/Development/K8S_nodeJS_Employees_App/EmployeeKoalaDB/old_app" />
+</testsuite>
+<testsuite package="org.eslint" time="0" tests="1" errors="0" name="/Users/koaladiego/Documents/Development/K8S_nodeJS_Employees_App/EmployeeKoalaDB/old_working_app.js">
+<testcase time="0" name="/Users/koaladiego/Documents/Development/K8S_nodeJS_Employees_App/EmployeeKoalaDB/old_working_app.js" classname="/Users/koaladiego/Documents/Development/K8S_nodeJS_Employees_App/EmployeeKoalaDB/old_working_app" />
+</testsuite>
+<testsuite package="org.eslint" time="0" tests="1" errors="0" name="/Users/koaladiego/Documents/Development/K8S_nodeJS_Employees_App/EmployeeKoalaDB/routes/index.js">
+<testcase time="0" name="/Users/koaladiego/Documents/Development/K8S_nodeJS_Employees_App/EmployeeKoalaDB/routes/index.js" classname="/Users/koaladiego/Documents/Development/K8S_nodeJS_Employees_App/EmployeeKoalaDB/routes/index" />
+</testsuite>
+<testsuite package="org.eslint" time="0" tests="1" errors="0" name="/Users/koaladiego/Documents/Development/K8S_nodeJS_Employees_App/EmployeeKoalaDB/routes/user.js">
+<testcase time="0" name="/Users/koaladiego/Documents/Development/K8S_nodeJS_Employees_App/EmployeeKoalaDB/routes/user.js" classname="/Users/koaladiego/Documents/Development/K8S_nodeJS_Employees_App/EmployeeKoalaDB/routes/user" />
+</testsuite>
+<testsuite package="org.eslint" time="0" tests="1" errors="0" name="/Users/koaladiego/Documents/Development/K8S_nodeJS_Employees_App/EmployeeKoalaDB/routes/users.js">
+<testcase time="0" name="/Users/koaladiego/Documents/Development/K8S_nodeJS_Employees_App/EmployeeKoalaDB/routes/users.js" classname="/Users/koaladiego/Documents/Development/K8S_nodeJS_Employees_App/EmployeeKoalaDB/routes/users" />
+</testsuite>
+</testsuites>

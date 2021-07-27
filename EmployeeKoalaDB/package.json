@@ -10,9 +10,9 @@
     "build:jade": "jade views/index.jade -o dist",
     "aws": "aws s3 sync dist/ s3://diego-servless-harness-node-app --acl public-read",
     "deploy": "npm run setup && npm run build && npm run aws",
-    "lint": "eslint --ext .js ./",
+    "lint": "eslint --ext .js ./ --format junit --output-file ./reports/eslint/eslint.xml",
     "lint:fix": "npm run lint -- --fix",
-    "coverage": "echo \"running coverage test\"",
+    "coverage": "echo \"running coverage test!!\"",
     "coverage:drone": "npm run coverage"
   },
   "dependencies": {
