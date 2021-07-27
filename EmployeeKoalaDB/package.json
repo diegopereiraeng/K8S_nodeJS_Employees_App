@@ -9,7 +9,9 @@
     "build": "npm run build:jade",
     "build:jade": "jade views/index.jade -o dist",
     "aws": "aws s3 sync dist/ s3://diego-servless-harness-node-app --acl public-read",
-    "deploy": "npm run setup && npm run build && npm run aws"
+    "deploy": "npm run setup && npm run build && npm run aws",
+    "lint": "eslint --ext .js ./",
+    "lint:fix": "npm run lint -- --fix"
   },
   "dependencies": {
     "connect": "^3.7.0",
@@ -26,6 +28,8 @@
     "stylus": "0.54.5"
   },
   "devDependencies": {
+    "eslint": "^7.31.0",
+    "eslint-plugin-react": "^7.24.0",
     "lint": "^0.7.0"
   }
 }
