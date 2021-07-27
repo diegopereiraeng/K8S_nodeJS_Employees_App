@@ -1,0 +1,106 @@
+body {
+  padding: 50px;
+  font: 20px "Lucida Grande", Helvetica, Arial, sans-serif;
+  font-size: 13px;
+  text-align: center;
+  text-stroke: 1px rgba(255,255,255,0.1);
+  color: #555;
+}
+a {
+  color: #00b7ff;
+}
+h1,
+h2 {
+  margin: 0;
+  font-size: 25px;
+  color: #343434;
+}
+h1 {
+  text-shadow: 1px 2px 2px #ddd;
+  font-size: 40px;
+}
+table,
+td,
+th {
+  border-collapse: collapse;
+  text-align: left;
+}
+table {
+  margin: 15px;
+}
+.leftClass {
+  text-align: left;
+  margin: 50px;
+}
+.dataColumn {
+  width: 200px;
+}
+.buttons {
+  width: 20px;
+}
+#employees {
+  text-align: left;
+  margin-left: 16px;
+  margin-right: auto;
+  width: 820px;
+}
+#employees td {
+  border: 1px solid #fff;
+  padding: 8px;
+}
+#employees tr:nth-child(even) {
+  background-color: #fff;
+}
+#employees tr:hover {
+  background-color: #ddd;
+  font-weight: bold;
+}
+#employees th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: center;
+  background-color: #4caf50;
+  color: #fff;
+}
+#employees .employee {
+  margin: 20px;
+}
+#employees .employee .created_at {
+  display: none;
+}
+#employees .employee .title {
+  text-align: left;
+}
+#employees .employee .name {
+  text-align: left;
+}
+#employees .employee .name:hover {
+  font-weight: bold;
+}
+.newemployee {
+  border: 3px;
+  border-color: #000;
+  border-style: dotted;
+  width: 450px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 14px;
+}
+input[type =text] {
+  width: 200px;
+  margin-left: 16px;
+  float: left;
+}
+input[type =button],
+input[type =submit] {
+  clear: both;
+  text-align: left;
+  margin-left: 16px;
+  display: block;
+}
+.label {
+  width: 150px;
+  text-align: right !important;
+  display: block;
+  float: left;
+}
