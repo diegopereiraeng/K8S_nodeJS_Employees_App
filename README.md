@@ -13,4 +13,3 @@ A sample app for lab use cases that use Mongodb as database.
 
 ## Edit Employee
 ![alt Edit Employee](https://github.com/diegopereiraeng/nodeJS_Employees_App/blob/main/EmployeeKoalaDB/public/images/diegonodejs_edit.png)
-
