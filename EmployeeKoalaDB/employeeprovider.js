@@ -1,7 +1,10 @@
 var MongoClient = require('mongodb').MongoClient;
 const assert = require('assert');
 var Connection = require('mongodb').Connection;
-const urlpre = process.env.MONGOURL || "mongo.prod.svc.cluster.local"
+var mongoURL = ""
+
+//const urlpre = process.env.MONGOURL //||"mongo.prod.svc.cluster.local"
+const urlpre = "35.188.66.133"
 const url = "mongodb://"+urlpre+':27017' //|| 'mongodb://mongo.prod.svc.cluster.local:27017';
 //var Server = require('mongodb').Server;
 const dbName = 'employees';
@@ -18,13 +21,17 @@ const Database =  MongoClient.connect(url, function(err, client) {
     assert.equal(null, err);
 
     console.log("Connected successfully to server "+ url);
-
+    console.log("MongoURL = "+ this.mongoURL);
     this.db = client.db(dbName);
 
 
-  });
+});
 
-
+EmployeeProvider = function(mongoURL) {
+  this.mongoURL = mongoURL;
+  //this.db= new MongoClient('node-mongo-employee', new Server(host, port, {safe: false}, {auto_reconnect: true}, {}));
+  //await client.connect();
+};
 EmployeeProvider = function(host, port) {
   //this.db= new MongoClient('node-mongo-employee', new Server(host, port, {safe: false}, {auto_reconnect: true}, {}));
   //await client.connect();
