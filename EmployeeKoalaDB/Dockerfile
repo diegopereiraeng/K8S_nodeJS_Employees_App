@@ -1,4 +1,5 @@
-FROM node:16
+#FROM node:16
+FROM node:alpine3.14
 
 #Update
 RUN apk add --update-cache \
