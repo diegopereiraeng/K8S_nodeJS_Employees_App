@@ -61,8 +61,8 @@ function errorNotification (err, str, req) {
 }
 
 
-var employeeProvider= new EmployeeProvider(process.env.MONGOURL ||'mongo.prod.svc.cluster.local', 27017);
-
+//var employeeProvider= new EmployeeProvider(process.env.MONGOURL ||'mongo.prod.svc.cluster.local', 27017);
+employeeProvider= new EmployeeProvider();
 //Routes
 
 //app.get('/', routes.index);
