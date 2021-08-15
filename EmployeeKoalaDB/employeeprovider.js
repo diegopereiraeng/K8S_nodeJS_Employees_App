@@ -1,14 +1,15 @@
 var MongoClient = require('mongodb').MongoClient;
 const assert = require('assert');
 var Connection = require('mongodb').Connection;
-var mongoURL = ""
+var mongoURL
 
-//const urlpre = process.env.MONGOURL //||"mongo.prod.svc.cluster.local"
-const urlpre = "35.188.66.133"
+const urlpre = process.env.MONGOURL ||"mongo.prod.svc.cluster.local"
+//const urlpre = ""
+//const urlpre = mongoURL
 const url = "mongodb://"+urlpre+':27017' //|| 'mongodb://mongo.prod.svc.cluster.local:27017';
 //var Server = require('mongodb').Server;
 const dbName = 'employees';
-
+console.log("Mongo Server: " + url);
 var BSON = require('mongodb').BSON;
 var ObjectID = require('mongodb').ObjectID;
 
