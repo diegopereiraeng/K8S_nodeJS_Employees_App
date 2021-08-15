@@ -1,8 +1,8 @@
 var MongoClient = require('mongodb').MongoClient;
 const assert = require('assert');
 var Connection = require('mongodb').Connection;
-
-const url = "mongodb://"+process.env.MONGOURL+':27017' || 'mongodb://mongo.prod.svc.cluster.local:27017';
+const urlpre = process.env.MONGOURL || "mongo.prod.svc.cluster.local"
+const url = "mongodb://"+urlpre+':27017' //|| 'mongodb://mongo.prod.svc.cluster.local:27017';
 //var Server = require('mongodb').Server;
 const dbName = 'employees';
 
