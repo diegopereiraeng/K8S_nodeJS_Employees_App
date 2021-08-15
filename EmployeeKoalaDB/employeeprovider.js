@@ -2,7 +2,7 @@ var MongoClient = require('mongodb').MongoClient;
 const assert = require('assert');
 var Connection = require('mongodb').Connection;
 
-const url = 'mongodb://localhost:27017';
+const url = 'mongodb://mongo.prod.svc.cluster.local:27017';
 //var Server = require('mongodb').Server;
 const dbName = 'employees';
 
@@ -26,7 +26,7 @@ const Database =  MongoClient.connect(url, function(err, client) {
 
 
 EmployeeProvider = function(host, port) {
-  //his.db= new MongoClient('node-mongo-employee', new Server(host, port, {safe: false}, {auto_reconnect: true}, {}));
+  //this.db= new MongoClient('node-mongo-employee', new Server(host, port, {safe: false}, {auto_reconnect: true}, {}));
   //await client.connect();
 }; 
 

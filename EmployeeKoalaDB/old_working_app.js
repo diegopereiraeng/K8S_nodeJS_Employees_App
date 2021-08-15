@@ -58,7 +58,7 @@ function errorNotification (err, str, req) {
   })
 }
 
-var employeeProvider= new EmployeeProvider('localhost', 27017);
+var employeeProvider= new EmployeeProvider('mongo.prod.svc.cluster.local', 27017);
 
 //Routes
 
