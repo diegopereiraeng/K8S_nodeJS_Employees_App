@@ -1,5 +1,6 @@
 #FROM node:16
 FROM node:alpine3.14
+LABEL mainteiner="diego.pereira@harness.io"
 
 #Update
 RUN apk add --update-cache \
