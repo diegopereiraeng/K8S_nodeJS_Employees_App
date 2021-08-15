@@ -1,13 +1,12 @@
 var MongoClient = require('mongodb').MongoClient;
 const assert = require('assert');
 var Connection = require('mongodb').Connection;
-var mongoURL
+
 
 const urlpre = process.env.MONGOURL ||"mongo.prod.svc.cluster.local"
-//const urlpre = ""
-//const urlpre = mongoURL
+
 const url = "mongodb://"+urlpre+':27017' //|| 'mongodb://mongo.prod.svc.cluster.local:27017';
-//var Server = require('mongodb').Server;
+
 const dbName = 'employees';
 console.log("Mongo Server: " + url);
 var BSON = require('mongodb').BSON;
@@ -18,18 +17,18 @@ const client = new MongoClient(url);
 
 
 // Use connect method to connect to the server
-const Database =  MongoClient.connect(url, function(err, client) {
+const Database =  MongoClient.connect(url, {useUnifiedTopology: true}, function(err, client) {
     assert.equal(null, err);
 
     console.log("Connected successfully to server "+ url);
-    console.log("MongoURL = "+ this.mongoURL);
+    console.log("MongoURL = "+ url);
     this.db = client.db(dbName);
 
 
 });
 
-EmployeeProvider = function(mongoURL) {
-  this.mongoURL = mongoURL;
+EmployeeProvider = function() {
+
   //this.db= new MongoClient('node-mongo-employee', new Server(host, port, {safe: false}, {auto_reconnect: true}, {}));
   //await client.connect();
 };
