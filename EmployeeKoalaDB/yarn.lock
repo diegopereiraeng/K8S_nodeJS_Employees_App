@@ -1684,7 +1684,7 @@
   "resolved" "https://registry.npmjs.org/moment/-/moment-2.29.1.tgz"
   "version" "2.29.1"
 
-"mongodb@>= 0.9.6-7":
+"mongodb@>= 2.2.4-7":
   "integrity" "sha512-WlirMiuV1UPbej5JeCMqE93JRfZ/ZzqE7nJTwP85XzjAF4rRSeq2bGCb1cjfoHLOF06+HxADaPGqT0g3SbVT1w=="
   "resolved" "https://registry.npmjs.org/mongodb/-/mongodb-3.6.6.tgz"
   "version" "3.6.6"
