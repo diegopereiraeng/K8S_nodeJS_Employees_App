@@ -12,6 +12,7 @@ var bodyParser = require('body-parser');
 var methodOverride = require('method-override')
 var errorhandler = require('errorhandler')
 
+var serviceName = process.env.SERVICE_NAME;
 
 
 var app = express();
@@ -74,7 +75,7 @@ app.get('/', function(req, res){
   });
 });
 
-app.get('/employee/new', function(req, res) {
+app.get("/"+serviceName+'/employee/new', function(req, res) {
   res.render('employee_new', {
     title: 'New Employee'
   });
@@ -82,7 +83,7 @@ app.get('/employee/new', function(req, res) {
 
 // list all Employees
 
-app.get('/employees', function(req, res) {
+app.get("/"+serviceName+'/employees', function(req, res) {
   employeeProvider.findAll(function(error, emps){
     res.render('employees', {
       title: 'Harness Employees',
@@ -93,7 +94,7 @@ app.get('/employees', function(req, res) {
 
 // save new employee
 
-app.post('/employee/new', function(req, res){
+app.post("/"+serviceName+'/employee/new', function(req, res){
   employeeProvider.save({
     title: req.param('title'),
     name: req.param('name')
@@ -103,7 +104,7 @@ app.post('/employee/new', function(req, res){
 });
 
 //update an employee
-app.get('/employee/:id/edit', function(req, res){
+app.get("/"+serviceName+'/employee/:id/edit', function(req, res){
   employeeProvider.findById(req.param('_id'), function(error, employee) {
     res.render('employee_edit',
     {
@@ -113,7 +114,7 @@ app.get('/employee/:id/edit', function(req, res){
 });
 
 // save updated employee
-app.post('/employee/:id/edit', function(req, res) {
+app.post("/"+serviceName+'/employee/:id/edit', function(req, res) {
   employeeProvider.update(req.param('_id'), {
     title: req.param('title'),
     name: req.param('name')
@@ -123,7 +124,7 @@ app.post('/employee/:id/edit', function(req, res) {
 });
 
 // delete an employee
-app.post('/employee/:id/delete', function(req, res) {
+app.post("/"+serviceName+'/employee/:id/delete', function(req, res) {
   employeeProvider.delete(req.param('_id'), function(error, docs) {
     res.redirect('/')
   });
@@ -131,7 +132,7 @@ app.post('/employee/:id/delete', function(req, res) {
 
 
     
-app.get('/users', user.list);
+app.get("/"+serviceName+'/users', user.list);
 
 http.createServer(app).listen(app.get('port'), function(){
   console.log('Express server listening on port ' + app.get('port'));
