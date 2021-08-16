@@ -17,12 +17,14 @@ const client = new MongoClient(url);
 
 
 // Use connect method to connect to the server
-const Database =  MongoClient.connect(url, {useUnifiedTopology: true}, function(err, client) {
+const Database =  MongoClient.connect(url, function(err, client) {
     assert.equal(null, err);
 
     console.log("Connected successfully to server "+ url);
-    console.log("MongoURL = "+ url);
+    
     this.db = client.db(dbName);
+
+    console.log("MongoURL = "+ url + " Database:" + dbName );
 
 
 });

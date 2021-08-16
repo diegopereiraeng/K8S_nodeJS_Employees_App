@@ -30,7 +30,6 @@ app.set('port', process.env.PORT || 3000);
 app.set('views', __dirname + '/views');
 app.set('view engine', 'jade');
 app.set('view options', {layout: false});
-//app.set('mongoURL', process.env.MONGOURL || "mongo.prod.svc.cluster.local");
 
 // Old Favicon
 app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')))
@@ -62,8 +61,7 @@ function errorNotification (err, str, req) {
 }
 
 
-//var employeeProvider= new EmployeeProvider(process.env.MONGOURL ||'mongo.prod.svc.cluster.local', 27017);
-employeeProvider= new EmployeeProvider();
+employeeProvider= new EmployeeProvider(process.env.MONGOURL , "27017");
 //Routes
 
 //app.get('/', routes.index);
