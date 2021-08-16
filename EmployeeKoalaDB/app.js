@@ -61,6 +61,13 @@ function errorNotification (err, str, req) {
   })
 }
 
+serviceName = process.env.SERVICE_NAME
+
+if(typeof serviceName === "undefined") {
+  serviceName = ""
+} else{
+  serviceName = serviceName+ "\\"
+}
 
 employeeProvider= new EmployeeProvider(process.env.MONGOURL , "27017");
 //Routes
@@ -77,7 +84,7 @@ app.get('/', function(req, res){
 
 app.get('/employee/new', function(req, res) {
   res.render('employee_new', {
-    title: 'New Employee'
+    title: 'Register New Employee'
   });
 });
 
@@ -99,7 +106,7 @@ app.post('/employee/new', function(req, res){
     title: req.param('title'),
     name: req.param('name')
   }, function (error, docs){
-    res.redirect('/')
+    res.redirect('/'+serviceName)
   });
 });
 
@@ -119,14 +126,14 @@ app.post('/employee/:id/edit', function(req, res) {
     title: req.param('title'),
     name: req.param('name')
   }, function(error, docs) {
-    res.redirect('/')
+    res.redirect('/'+serviceName)
   });
 });
 
 // delete an employee
 app.post('/employee/:id/delete', function(req, res) {
   employeeProvider.delete(req.param('_id'), function(error, docs) {
-    res.redirect('/')
+    res.redirect('/'+serviceName)
   });
 });
 
