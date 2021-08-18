@@ -151,8 +151,6 @@ table.table .avatar {
 .custom-checkbox label:before{
 	width: 18px;
 	height: 18px;
-}
-.custom-checkbox label:before {
 	content: '';
 	margin-right: 10px;
 	display: inline-block;
@@ -175,14 +173,13 @@ table.table .avatar {
 	transform: inherit;
 	z-index: 3;
 	transform: rotateZ(45deg);
+	border-color: #fff;
 }
 .custom-checkbox input[type="checkbox"]:checked + label:before {
 	border-color: #03A9F4;
 	background: #03A9F4;
 }
-.custom-checkbox input[type="checkbox"]:checked + label:after {
-	border-color: #fff;
-}
+
 .custom-checkbox input[type="checkbox"]:disabled + label:before {
 	color: #b8b8b8;
 	cursor: auto;
