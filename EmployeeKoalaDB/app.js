@@ -66,7 +66,7 @@ serviceName = process.env.SERVICE_NAME
 if(typeof serviceName === "undefined") {
   serviceName = ""
 } else{
-  serviceName = serviceName+ "\\"
+  serviceName =  "/" + serviceName
 }
 
 employeeProvider= new EmployeeProvider(process.env.MONGOURL , "27017");
@@ -96,6 +96,47 @@ app.get('/employees', function(req, res) {
       title: 'Harness Employees',
       employees: emps
     });
+  });
+});
+
+// *** NEW list all Employees Experience
+
+app.get('/new_employees', function(req, res) {
+  employeeProvider.findAll(function(error, emps){
+    res.render('new_employees', {
+      title: 'Harness Employees Experience',
+      employees: emps
+    });
+  });
+});
+
+// *** NEW Create an Employee
+
+app.post('/new_employees', function(req, res) {
+  employeeProvider.save({
+    title: req.param('title'),
+    name: req.param('name')
+  }, function (error, docs){
+    res.redirect('..'+serviceName+"/new_employees")
+  });
+});
+
+// *** NEW Update an Employee
+
+app.put('/new_employees', function(req, res) {
+  employeeProvider.update(req.param('_id'), {
+    title: req.param('title'),
+    name: req.param('name')
+  }, function(error, docs) {
+    res.redirect('..'+serviceName+"/new_employees")
+  });
+});
+
+// *** New Delete an Employee
+
+app.delete('/new_employees', function(req, res) {
+  employeeProvider.delete(req.param('_id'), function(error, docs) {
+    res.redirect('..'+serviceName+"/new_employees")
   });
 });
 

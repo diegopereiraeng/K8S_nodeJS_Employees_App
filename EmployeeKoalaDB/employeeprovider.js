@@ -2,7 +2,6 @@ var MongoClient = require('mongodb').MongoClient;
 const assert = require('assert');
 var Connection = require('mongodb').Connection;
 
-
 const urlpre = process.env.MONGOURL ||"mongo.prod.svc.cluster.local"
 
 const url = "mongodb://"+urlpre+':27017' //|| 'mongodb://mongo.prod.svc.cluster.local:27017';

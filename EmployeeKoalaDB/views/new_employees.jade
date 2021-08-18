@@ -1,0 +1,135 @@
+extends new_layout
+block content
+    .container-xl
+        .table-responsive
+            .table-wrapper
+                .table-title
+                    .row
+                        .col-sm-6
+                            h2
+                                | Manage 
+                                b Employees
+                        .col-sm-6
+                            a.btn.btn-success(href='#addEmployeeModal' data-toggle='modal')
+                                i.material-icons 
+                                span Add New Employee
+                            a.btn.btn-danger(href='#deleteEmployeeModal' data-toggle='modal')
+                                i.material-icons 
+                                span Delete
+            table.table.table-striped.table-hover
+                thead
+                tr
+                    th
+                        span.custom-checkbox
+                            input#selectAll(type='checkbox')
+                            label(for='selectAll')
+                    th Name
+                    th Email
+                    th Title
+                    th Phone
+                    th Actions
+                tbody
+                - each employee in employees      
+                    tr
+                        td
+                            span.custom-checkbox
+                                input#checkbox1(type='checkbox' name='options[]' value='1')
+                                label(for='checkbox1')
+                        td
+                            div.name=employee.name
+                        td 
+                            div.email=employee.email || "email test"
+                        td
+                            div.title=employee.title
+                        td 
+                            div.phone=employee.phone || "111-222-333"
+                        td
+                            a.edit(href='#editEmployeeModal' data-toggle='modal')
+                                i.material-icons(data-toggle='tooltip' title='Edit') 
+                            a.delete(href='#deleteEmployeeModal' data-toggle='modal')
+                                i.material-icons(data-toggle='tooltip' title='Delete') 
+            .clearfix
+                .hint-text
+                    | Showing 
+                    b 5
+                    |  out of 
+                    b 25
+                    |  entries
+                ul.pagination
+                    li.page-item.disabled
+                        a(href='#') Previous
+                    li.page-item.active
+                        a.page-link(href='#') 1
+                    li.page-item
+                        a.page-link(href='#') 2
+                    li.page-item
+                        a.page-link(href='#') 3
+                    li.page-item
+                        a.page-link(href='#') 4
+                    li.page-item
+                        a.page-link(href='#') 5
+                    li.page-item
+                        a.page-link(href='#') Next
+    // Add Modal HTML
+    #addEmployeeModal.modal.fade
+      .modal-dialog
+        .modal-content
+          form(method="post")
+            .modal-header
+              h4.modal-title Add Employee
+              button.close(type='button' data-dismiss='modal' aria-hidden='true') ×
+            .modal-body
+              .form-group
+                span.label Name :
+                input.form-control(type="text" name="name" required='')
+              .form-group
+                span.label Email :
+                input.form-control(type="text" name="email" required='')
+              .form-group
+                span.label Title :
+                textarea.form-control(type="text" name="title" required='')
+              .form-group
+                span.label Phone :
+                input.form-control(type="text" name="phone" required='')
+            .modal-footer
+              input.btn.btn-default(type='button' data-dismiss='modal' value='Cancel')
+              input.btn.btn-success(type='submit' value='Add')
+    // Edit Modal HTML
+    #editEmployeeModal.modal.fade
+      .modal-dialog
+        .modal-content
+          form(method="put")
+            .modal-header
+              h4.modal-title Edit Employee
+              button.close(type='button' data-dismiss='modal' aria-hidden='true') ×
+                        .modal-body
+              .form-group
+                span.label Name :
+                input.form-control(type="text" name="name" required='')
+              .form-group
+                span.label Email :
+                input.form-control(type="text" name="email" required='')
+              .form-group
+                span.label Title :
+                textarea.form-control(type="text" name="title" required='')
+              .form-group
+                span.label Phone :
+                input.form-control(type="text" name="phone" required='')
+            .modal-footer
+              input.btn.btn-default(type='button' data-dismiss='modal' value='Cancel')
+              input.btn.btn-info(type='submit' value='Save')
+    // Delete Modal HTML
+    #deleteEmployeeModal.modal.fade
+      .modal-dialog
+        .modal-content
+          form(method="delete")
+            .modal-header
+              h4.modal-title Delete Employee
+              button.close(type='button' data-dismiss='modal' aria-hidden='true') ×
+            .modal-body
+              p Are you sure you want to delete these Records?
+              p.text-warning
+                small This action cannot be undone.
+            .modal-footer
+              input.btn.btn-default(type='button' data-dismiss='modal' value='Cancel')
+              input.btn.btn-danger(type='submit' value='Delete')
