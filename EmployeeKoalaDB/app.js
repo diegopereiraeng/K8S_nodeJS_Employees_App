@@ -38,7 +38,7 @@ if(typeof serviceName === "undefined") {
 }
 
 // Old Favicon
-app.use(favicon(path.join(__dirname, 'public',serviceName, 'favicon.ico')))
+app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')))
 // Old Logger
 // create a write stream (in append mode)
 var accessLogStream = fs.createWriteStream(path.join(__dirname, 'access.log'), { flags: 'a' })
