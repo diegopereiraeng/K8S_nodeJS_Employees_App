@@ -12,9 +12,6 @@ var bodyParser = require('body-parser');
 var methodOverride = require('method-override')
 var errorhandler = require('errorhandler')
 
-
-
-
 var app = express();
 
 logger(function (tokens, req, res) {
@@ -32,8 +29,7 @@ app.set('views', __dirname + '/views');
 app.set('view engine', 'jade');
 app.set('view options', {layout: false});
 
-// Old Favicon
-app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')))
+
 // Old Logger
 // create a write stream (in append mode)
 var accessLogStream = fs.createWriteStream(path.join(__dirname, 'access.log'), { flags: 'a' })
@@ -68,6 +64,9 @@ if(typeof serviceName === "undefined") {
 } else{
   serviceName =  "/" + serviceName
 }
+
+// Old Favicon
+app.use(favicon(path.join(__dirname, 'public', serviceName, 'favicon.ico')))
 
 employeeProvider= new EmployeeProvider(process.env.MONGOURL , "27017");
 //Routes
