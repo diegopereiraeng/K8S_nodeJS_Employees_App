@@ -29,7 +29,16 @@ app.set('views', __dirname + '/views');
 app.set('view engine', 'jade');
 app.set('view options', {layout: false});
 
+serviceName = process.env.SERVICE_NAME
 
+if(typeof serviceName === "undefined") {
+  serviceName = ""
+} else{
+  serviceName =  "/" + serviceName
+}
+
+// Old Favicon
+app.use(favicon(path.join(__dirname, 'public',serviceName, 'favicon.ico')))
 // Old Logger
 // create a write stream (in append mode)
 var accessLogStream = fs.createWriteStream(path.join(__dirname, 'access.log'), { flags: 'a' })
@@ -57,16 +66,7 @@ function errorNotification (err, str, req) {
   })
 }
 
-serviceName = process.env.SERVICE_NAME
 
-if(typeof serviceName === "undefined") {
-  serviceName = ""
-} else{
-  serviceName =  "/" + serviceName
-}
-
-// Old Favicon
-app.use(favicon(path.join(__dirname, 'public', serviceName, 'favicon.ico')))
 
 employeeProvider= new EmployeeProvider(process.env.MONGOURL , "27017");
 //Routes
