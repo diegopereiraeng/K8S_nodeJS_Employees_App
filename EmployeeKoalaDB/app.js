@@ -75,7 +75,7 @@ employeeProvider= new EmployeeProvider(process.env.MONGOURL , "27017");
 app.get('/', function(req, res){
   employeeProvider.findAll(function(error, emps){
     res.render('index', {
-      title: 'Diego's Employees Node.js Sample App',
+      title: 'Diego Employees Node.js Sample App',
       employees: emps
     });
   });
