@@ -66,8 +66,6 @@ function errorNotification (err, str, req) {
   })
 }
 
-
-
 employeeProvider= new EmployeeProvider(process.env.MONGOURL , "27017");
 //Routes
 
